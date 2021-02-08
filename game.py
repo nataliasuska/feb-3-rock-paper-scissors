@@ -1,16 +1,26 @@
 import random
+import os
+
+
+
+human_name = os.getenv("human_name", default="Player One")
 
 print("-------------------")
-print("Welcome 'Player One' to a Rock-Paper-Scissors game with Nat!")
+print(f"Welcome {human_name} to a Rock-Paper-Scissors game with Nat!")
 print("-------------------")
 
+while True:
 human_choice = input("Please select either rock, paper, or scissors:")
 print(f"You chose: {human_choice}")
+human_choice = human_choice.lower()
 
 choices = ['rock', 'paper', 'scissors']
 natbot_choice = random.choice(choices)
 print(f"Nat chose: {natbot_choice}")
 
+if human_choice not in choices:
+    print("Please select from given criteria of rock, paper, or scissors and try again.")
+    exit()
 print("-------------------")
 
 if natbot_choice == "scissors" and human_choice == "rock":
@@ -24,6 +34,14 @@ elif natbot_choice == human_choice:
 else:
     print("Oh, Nat won. Please don't cry...")
 
-print("-------------------")
-print("Thanks for playing, I hope you had fun here. Please play again soon!")
-print("-------------------")
+while True:
+    answer = str(input('Do you want to play again? Say yes or no:'))
+    if answer in ('yes','no'):
+        break
+    print("Please write either 'yes' or 'no':)
+    if answer == 'yes':
+        continue
+    else:
+        print("-------------------")
+        print("Thanks for playing, I hope you had fun here. Please play again soon!")
+        print("-------------------")
