@@ -6,7 +6,7 @@ load_dotenv()
 human_name = os.getenv("human_name", default="human")
 
 print("-------------------")
-print(f"Welcome {human_name} to a Rock-Paper-Scissors game with Nat!")
+print(f"Welcome {human_name} to a Rock-Paper-Scissors game with the Nat-Bot!")
 print("-------------------")
 
 while True:
@@ -19,7 +19,7 @@ while True:
         continue
 
     natbot_choice = random.choice(choices)
-    print(f"Nat chose: {natbot_choice}")
+    print(f"Nat-Bot chose: {natbot_choice}")
     print("-------------------")
 
     if natbot_choice == "scissors" and human_choice == "rock":
@@ -31,7 +31,7 @@ while True:
     elif natbot_choice == human_choice:
         print("It's a tie!")
     else:
-        print("Oh, Nat won. Please don't cry...")
+        print("Oh, the Nat-Bot won. Please don't cry...")
 
     while True:
         answer = str(input('Do you want to play again? Say yes or no:'))

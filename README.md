@@ -1,11 +1,13 @@
 # Rock, Paper, Scissors Game
 ### Made with love and coffee by Natalia
+Enjoy this fun rock, paper, scissors game to play against the Nat-Bot. Nat-Bot is just a bot version of me, Nat, the creator of this game. 
 
 ## Required
 + Anaconda 3.7+
 + Python 3.7+
 + Pip
 + A command-line terminal (I use Git Bash for windows)
++ A text editor for personalization (I use Visual Studio Code)
 
 ## User Instructions
 ### Cloning
@@ -21,7 +23,7 @@ Create and activate a new project-specific Anaconda virtual environment for our 
 conda create -n my-game-env python=3.8
 conda activate my-game-env
 ```
-In our new folder, we probably don't have the right packages just yet. However, in the requirements.txt file of this repo, I included the package we need for this game. To install it, type in the command line:
+In our new folder, we probably don't have the right packages just yet to customize the player name (more instructuions later) To install it, type in the command line:
 ```sh
 pip install -r requirements.txt
 ```
@@ -32,13 +34,14 @@ python game.py
 You should now see that the game begins and prompts you to choose from rock, paper, or scissors. If you already had this game downloaded and want to play again, just be sure to change your directory to the folder where you cloned this repo, activate your environment, and run the game.
 
 ### Customizing Player Name
+The default name is 'human', since I expect humans to be playing. In order to customize the player name locally in your computer, be sure to have installed the requirements.txt package as mentioned in the Environment Setup and Game Start section above. 
+
+Open your text editor and create a new .env file. In this file, type in your name, or any name within the quotes:
+```sh
+human_name = "Your Name"
+```
+Now when we run our app in the command line, we should see "Welcome 'Your Name' to..." rather than "Welcome human to..." Also, we use the variable 'human_name' because I used this for the game code. Thanks to another file, the .gitignore file, your .env file is stored locally and won't be published to GitHub in the event you commit your changes. 
 
 
 
-Finally, update your program to allow the user to configure their own player name by passing an environment variable called "PLAYER_NAME" stored in a local ".env" file.
 
-Make sure to add corresponding instructions to the README file, to let the player know how to set up the ".env" file.
-
-Make sure the repository's ".gitignore" file includes an entry about the ".env" file, and ensure the ".gigitnore" file is saved and committed before adding a ".env" file. This should already be the case if you added a Python-flavored ".gitignore" file during the repo creation step.
-
-Also note we are now requiring the program to use a third-party package, so we should add a "requirements.txt" file to the repo with the package name inside. And we should add a `pip install -r requirements.txt` step to the README file to instruct the user to install packages before trying to run the program.
